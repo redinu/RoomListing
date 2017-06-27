@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Insert title here</title>
+	</head>
+	<body>
+			<p> Address:<span  th:text="${room.address}"/></p>
+			 
+			<p> City:<span  th:text="${room.city}"/></p>
+			 		
+			<p> State:<span  th:text="${room.state}"/></p>
+				  
+			<p> Price:<span  th:text="${room.price}"/></p>
+				   
+			<p> Description:<span th:text="${room.description}"/></p>
+			
+			<p> Rules:<span  th:text="${room.rules}"/></p>
+			
+			<p> Wifi:<span  th:text="${room.wifi}" /></p>
+			 	  
+			<p> Cable:<span th:text="${room.cable}"/> </p>
+			 		
+			<p> Private Bathroom: <span th:text="${room.privateBathroom}"/> </p>
+							   
+			<p> Availability:<span th:text="${room.isRented}" /></p>
+			 
+			 <form action="/delete" method="post">
+					<input type="hidden" name='id' th:value="${roomId}"/>
+					<button type="submit" value="submit">Remove</button>
+			</form>
+	</body>
+	
+</html>

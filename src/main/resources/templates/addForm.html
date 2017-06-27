@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<form th:action= "@{'/add'}" th:method="post" th:object="${listing}">
+		
+			<p> Address:<input type="text" th:field="*{address}"/>
+			
+			<span th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span></p>
+			<p> City:<input type="text" th:field="*{city}"/>
+			<span th:if="${#fields.hasErrors('city')}" th:errors="*{city}"/></p>
+			<p> State:<input type="text" th:field="*{state}"/>
+			<span th:if="${#fields.hasErrors('state')}" th:errors="*{state}"/></p>
+			<p> Price:<input type="text" th:field="*{price}"/>
+			<span th:if="${#fields.hasErrors('state')}" th:errors="*{state}"/>	</p>
+	
+			<p> Description:<input type="text" th:field="*{description}"/></p>
+			
+			<p> Rules:<input type="text" th:field="*{rules}"/></p>
+			
+			<p> Wifi:<input type="radio" name ="wifi" th:field="*{wifi}" value="Yes">Yes</input>
+			 	  <input type="radio" name="wifi" th:field="*{wifi}" value="No">No</input>
+			 </p>
+			 <p>
+			 Cable:<input type="radio" name="cable" th:field="*{cable}" value="none"> None</input>
+			 		<input type="radio" name="cable" th:field="*{cable}" value="basic">Basic</input>
+			 		<input type="radio" name="cable" th:field="*{cable}" value="premium">Premium</input>
+			 </p>
+			 <p>		
+			 Private Bathroom: <input type="radio" name ="privateBathroom" th:field="*{privateBathroom}" value="Yes">Yes</input> 
+							   <input type="radio" name ="privateBathroom" th:field="*{privateBathroom}" value="No">No</input>
+			 </p>	
+			 <p>		   
+			 Availability:<input type="radio" name ="isRented" th:field="*{isRented}" value="Rented">Rented</input>
+						  <input type="radio" name ="isRented" th:field="*{isRented}" value="Available">Available</input>
+			 </p><br/>
+			 
+			<input type="submit" value="Submit"/>
+		</form>
+	</body>
+</html>
+
+
+	
